@@ -7,7 +7,7 @@ return function(BUS)
             local scene_module    = module_registry:new_entry("scene")
 
             scene_module:set_entry(c3d.registry.entry("add_geometry"),function(geom)
-                return BUS.object.scene_object.new(geom)
+                return geom:push()
             end)
         end
 
